@@ -3,7 +3,6 @@ package creationalPatterns;
 import java.util.ArrayList;
 import java.util.List;
 
-
 public class AadharCardSingletonPattern {
 
 	// Static instance of AadharCardSingletonPattern to implement the Singleton.
@@ -44,8 +43,18 @@ public class AadharCardSingletonPattern {
 	}
 	// Method to add a new member to the Aadhar card list
 
-	public void addMember(PersonDto p) {
-		aadharMembers.add(p);
-		System.out.println("Account created successfully");
+	public List<PersonDto> getAadharMembers() {
+		return aadharMembers;
 	}
+
+	public void setAadharMembers(List<PersonDto> aadharMembers) {
+		this.aadharMembers = aadharMembers;
+	}
+
+//	public void addMember(PersonDto p) {
+//		aadharMembers.add(p);
+//		System.out.println("Account created successfully");
+//	}
+
+	
 }

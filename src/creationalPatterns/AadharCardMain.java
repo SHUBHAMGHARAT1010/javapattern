@@ -4,13 +4,14 @@ public class AadharCardMain {
 
 	// main
 	public static void main(String[] args) {
-		AadharCardSingletonPattern aadhar = AadharCardSingletonPattern.getInstance();
 
-		aadhar.addMember(new PersonDto(100001l, 8766843042l, "Shubham Gharat", 25.6f));
-		aadhar.addMember(new PersonDto(100002l, 9881819916l, "Krushna Shendge", 25.7f));
+		AadharCardService service = new AadharCardService();
 
-		AadharCardSingletonPattern otherInst = AadharCardSingletonPattern.getInstance();
-		System.out.println(aadhar == otherInst);
+		service.addMember(new PersonDto.PersonBuilder(746576457865365L, 8766843042L, "Shubham Gharat").setAge(25.1F).build());
 
+		service.addMember(new PersonDto.PersonBuilder(36593459754535755L, 9588688054L, "Vikki").setAge(27.5F).build());
+
+
+		service.getAllAadharMembers();
 	}
 }
